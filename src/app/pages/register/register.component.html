@@ -1,1 +1,64 @@
-<p>register works!</p>
+<div class="container">
+  <main class="content">
+    <div class="columns">
+      <div class="column"></div>
+      <div class="column">
+        <div class="card">
+          <header class="card-header has-text-centered">
+            <p class="card-header-title"><img src="../../../assets/images/logo.png" alt=""></p>
+          </header>
+          <div class="card-content">
+            <form (submit)="signup()">
+              <div class="field">
+                <p class="control has-icons-left has-icons-right">
+                  <input class="input" type="text" [(ngModel)]="user.firstname" name="firstname" placeholder="Firstname"/>
+                  <span class="icon is-small is-left"><i class="fas fa-user"></i></span>
+                </p>
+              </div>
+              <div class="field">
+                <p class="control has-icons-left has-icons-right">
+                  <input class="input" type="text" [(ngModel)]="user.lastname" name="lastname" placeholder="Lastname"/>
+                  <span class="icon is-small is-left"><i class="fas fa-user"></i></span>
+                </p>
+              </div>
+              <div class="field">
+                <p class="control has-icons-left has-icons-right">
+                  <input class="input" type="email" [(ngModel)]="user.email" name="email" placeholder="user@example.com"/>
+                  <span class="icon is-small is-left"><i class="fas fa-user"></i></span>
+                </p>
+              </div>
+              <div class="field">
+                <p class="control has-icons-left has-icons-right">
+                  <input class="input" type="password" [(ngModel)]="user.password" name="password" placeholder="Password"/>
+                  <span class="icon is-small is-left"><i class="fa fa-key fa-fw"></i></span>
+                </p>
+              </div>
+              
+              <div class="field">
+                <div class="control has-icons-left has-icons-right">
+                  <div class="select is-fullwidth">
+                    <select name="role" [(ngModel)]="user.role">
+                      <option value="admin">Admin</option>
+                      <option value="coordinator">Coordinator</option>
+                      <option value="teacher">Teacher</option>
+                    </select>
+                  </div>
+                  <span class="icon is-left">
+                    <i class="fas fa-globe"></i>
+                  </span>
+                </div>
+              </div>
+
+              <div class="field">
+                <p class="control">
+                  <button class="button is-danger is-fullwidth" type="submit">SAVE</button>
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="column"></div>
+    </div>
+  </main>
+</div>
