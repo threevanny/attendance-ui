@@ -3,7 +3,7 @@
     <div class="container">
       <div class="navbar-brand">
         <a class="navbar-item" href="/">
-          <img src="../assets/images/calendar.png" width="56" height="28">
+          <img src="../assets/images/logo.png" width="140" height="28">
         </a>
     
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -29,7 +29,25 @@
             </div>
           </ng-container>
           <ng-template #logout>
-            <a class="navbar-item" (click)="apiService.logoutRequest()">Logout</a>
+            <div class="field">
+              <div class="navbar-item" >
+
+                <div class="icon-text mr-3">
+                  <span class="icon has-text-dark">
+                    <i class="fas fa-user"></i>
+                  </span>
+                  <p class="mr-1">{{ user["name"] }}</p>
+                  <small class="tag is-info is-light">{{ user["role"] }}</small>
+                </div>
+
+                <p class="control">
+                  <a class="button is-danger is-outlined" (click)="apiService.logoutRequest()">
+                    <span class="icon">
+                      <i class="fas fa-power-off"></i>
+                    </span>
+                  </a>
+              </div>
+            </div>
           </ng-template>
         </div>
       </div>

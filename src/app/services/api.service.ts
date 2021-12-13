@@ -33,17 +33,17 @@ export class ApiService {
     )
   }
 
-  logoutRequest(){
+  logoutRequest() {
     const token = this.getToken();
-    return this.http.get<any>(`${this.API}/api/logout`, { })
+    return this.http.post<any>(`${this.API}/api/logout`, { token: token })
     .subscribe(res => {
       console.log(res)
       localStorage.removeItem('token');
       localStorage.removeItem('id');
       localStorage.removeItem('role');
+      localStorage.removeItem('name');
       this.router.navigate(['/login']);
     })
-  
   }
 
   isAuth(): boolean {
@@ -54,15 +54,27 @@ export class ApiService {
     }
   }
 
-  isAdmin(): boolean {
-    if(localStorage.getItem('role') == 'admin'){
-      return true;
+  getRole() {
+    if(localStorage.getItem('role')){
+      return localStorage.getItem('role');
     } else {
-      return false;
+      return ''
     }
   }
 
-  async getToken() {
-    return await localStorage.getItem('token');
+  getToken(): any {
+    return localStorage.getItem('token');
+  }
+
+  getName() {
+    if(localStorage.getItem('name')){
+      return localStorage.getItem('name');
+    } else {
+      return ''
+    }
+  }
+
+  getProfile(token: any) {
+    return this.http.post<any>(`${this.API}/api/profile`, { token: token })
   }
 }

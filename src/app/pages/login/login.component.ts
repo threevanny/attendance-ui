@@ -31,9 +31,11 @@ export class LoginComponent implements OnInit {
     this.apiService.loginRequest(email, password)
     .subscribe(res => {
       if(res.isAuth) {
+        console.log("res log", res)
         localStorage.setItem('token', res.token);
         localStorage.setItem('id', res.id);
         localStorage.setItem('role', res.role);
+        localStorage.setItem('name', res.name);
         this.router.navigate(['/profile']);
       } else {
         console.log(res);

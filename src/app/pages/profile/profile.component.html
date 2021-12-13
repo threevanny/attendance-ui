@@ -1,0 +1,80 @@
+<div class="container">
+  <!-- ADMIN -->
+
+  <ng-container *ngIf="apiService.getRole() == 'admin'">
+    <table class="table is-striped">
+      <thead>
+        <tr>
+          <th><abbr title="Firstname">Firstname</abbr></th>
+          <th><abbr title="Lastname">Lastname</abbr></th>
+          <th><abbr title="Role">Role</abbr></th>
+          <th><abbr title="Email">Email</abbr></th>
+          <th><abbr title="Config">Config</abbr></th>
+        </tr>
+      </thead>
+      <tfoot>
+        <tr>
+          <th><abbr title="Firstname">Firstname</abbr></th>
+          <th><abbr title="Lastname">Lastname</abbr></th>
+          <th><abbr title="Role">Role</abbr></th>
+          <th><abbr title="Email">Email</abbr></th>
+          <th><abbr title="Config">Config</abbr></th>
+        </tr>
+      </tfoot>
+      <tbody>
+  
+        <tr *ngFor="let user of users">
+          <td>{{user.firstname}}</td>
+          <td>{{user.lastname}}</td>
+          <td>{{user.role}}</td>
+          <td>{{user.email}}</td>
+          <td><a class="icon"><i class="fas fa-cog"></i></a></td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </ng-container>
+
+<!-- TEACHER -->
+
+  <ng-container *ngIf="apiService.getRole() == 'teacher'">
+    <table class="table is-striped">
+      <thead>
+        <tr>
+          <th><abbr title="Date">Date</abbr></th>
+          <th><abbr title="Subject">Subject</abbr></th>
+          <th><abbr title="N. Students">N. Students</abbr></th>
+          <th><abbr title="Difficulties">Difficulties</abbr></th>
+          <th><abbr title="Config">Config</abbr></th>
+        </tr>
+      </thead>
+      <tfoot>
+        <tr>
+          <th><abbr title="Date">Date</abbr></th>
+          <th><abbr title="Subject">Subject</abbr></th>
+          <th><abbr title="N. Students">N. Students</abbr></th>
+          <th><abbr title="Difficulties">Difficulties</abbr></th>
+          <th><abbr title="Config">Config</abbr></th>
+        </tr>
+      </tfoot>
+      <tbody>
+  
+        <tr *ngFor="let att of attendances">
+          <td>{{(att.date).substring(0, 10)}}</td>
+          <td>{{att.subject}}</td>
+          <td>{{att.students}}</td>
+          <td>{{att.difficulties}}</td>
+          <td><a class="icon"><i class="fas fa-cog"></i></a></td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </ng-container>
+
+<!-- COORDINATOR -->
+
+  <ng-container *ngIf="apiService.getRole() == 'coordinator'">
+    <p>Teacher</p>
+  </ng-container>
+    
+</div>
