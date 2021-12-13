@@ -26,12 +26,11 @@ export class RegisterComponent implements OnInit {
   }
 
   signup(){
-    console.log('Registering...');
     const {firstname, lastname, email, password, role} = this.user;
     this.apiService.registerRequest(firstname, lastname, email, password, role)
     .subscribe( res => {
       if(res.success) {
-        this.router.navigate(['/admin']);
+        this.router.navigate(['/profile']);
       } else {
         console.log(res);
       }
