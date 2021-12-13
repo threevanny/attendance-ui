@@ -6,6 +6,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { AttendanceCreateComponent} from './pages/attendance-create/attendance-create.component';
 
 import { AuthGuard } from './auth.guard';
 
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent},
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
+  { path: 'attendance-create', component: AttendanceCreateComponent },
   { path: '**', component: PageNotFoundComponent }
 
 ];

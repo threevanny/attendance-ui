@@ -12,6 +12,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 import { AuthGuard } from './auth.guard';
+import { AttendanceCreateComponent } from './pages/attendance-create/attendance-create.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AuthGuard } from './auth.guard';
     RegisterComponent,
     LoginComponent,
     ProfileComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    AttendanceCreateComponent
   ],
   imports: [
     BrowserModule,

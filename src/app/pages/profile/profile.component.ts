@@ -58,7 +58,6 @@ export class ProfileComponent implements OnInit {
       this.http.get<Attendance[]>(`${this.apiService.API}/api/attendance/all`)
       .subscribe(data => {
         this.attendances = data
-        console.log(this.attendances)
       })
     }
   // 

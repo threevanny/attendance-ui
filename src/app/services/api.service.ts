@@ -34,6 +34,11 @@ export class ApiService {
   }
 
   logoutRequest() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('id');
+    localStorage.removeItem('role');
+    localStorage.removeItem('name');
+    
     const token = this.getToken();
     return this.http.post<any>(`${this.API}/api/logout`, { token: token })
     .subscribe(res => {
@@ -74,7 +79,16 @@ export class ApiService {
     }
   }
 
+  getId() {
+    return localStorage.getItem('id');
+  }
+
   getProfile(token: any) {
     return this.http.post<any>(`${this.API}/api/profile`, { token: token })
+  }
+
+  createAttendanceRequest(author: any, idAuthor: any, subject: String, students: String, difficulties: string) {
+    return this.http.post<any>(`${this.API}/api/attendance/create`,
+     { author: author, idAuthor: idAuthor, subject: subject, students: students, difficulties: difficulties })
   }
 }
