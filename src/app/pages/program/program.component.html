@@ -1,1 +1,41 @@
-<p>program works!</p>
+<div class="container">
+  <main class="content">
+    <div class="columns">
+      <div class="column"></div>
+      <div class="column">
+        <div class="card">
+          <header class="card-header has-text-centered">
+            <p class="card-header-title">Program</p>
+          </header>
+          <div class="card-content">
+            <form (submit)="createProgramRequest()">
+              <div class="field">
+                <p class="control">
+                  <input class="input" type="text" [(ngModel)]="program.code" name="code" placeholder="2711" required/>
+                </p>
+              </div>
+              <div class="field">
+                <p class="control">
+                  <input class="input" type="text" [(ngModel)]="program.name" name="name" placeholder="Trabajo Social" required/>
+                </p>
+              </div>
+              <div class="field">
+                <p class="control">
+                  <input class="input" type="number" [(ngModel)]="program.duration" name="duration" placeholder="Duration in semesters" required/>
+                </p>
+              </div>
+
+              <div class="field">
+                <p class="control">
+                  <button class="button is-danger is-fullwidth" type="submit">SAVE</button>
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="column"></div>
+    </div>
+  </main>
+</div>
+

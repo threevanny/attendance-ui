@@ -1,1 +1,70 @@
-<p>subject works!</p>
+<div class="container">
+  <main class="content">
+    <div class="columns">
+      <div class="column"></div>
+      <div class="column">
+        <div class="card">
+          <header class="card-header has-text-centered">
+            <p class="card-header-title">Subject</p>
+          </header>
+          <div class="card-content">
+            <form (submit)="createSubjectRequest()">
+
+              <div class="field">
+                <div class="control">
+                  <div class="select is-fullwidth">
+                    <select name="role" [(ngModel)]="subject.teacher">
+                      <option value="ddsad5d68as">Robert Plant</option>
+                      <option value="ddsad5d68as">Robert Plant</option>
+                      <option value="ddsad5d68as">Robert Plant</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="field">
+                <p class="control">
+                  <input class="input" type="text" [(ngModel)]="subject.name" name="name" placeholder="Name" required/>
+                </p>
+              </div>
+
+              <div class="field">
+                <p class="control">
+                  <input class="input" type="text" [(ngModel)]="subject.code" name="code" placeholder="Code" required/>
+                </p>
+              </div>
+             
+              <div class="field">
+                <p class="control">
+                  <input class="input" type="number" [(ngModel)]="subject.intensity" name="intensity" placeholder="Hourlyintensity" required/>
+                </p>
+              </div>
+
+              <div class="field">
+                <div class="control">
+                  <div class="select is-fullwidth">
+                    <select name="role" [(ngModel)]="subject.program">
+                      <option value="2711">Tec. Sistemas</option>
+                      <option value="2711">Tec. Sistemas</option>
+                      <option value="2711">Tec. Sistemas</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="field">
+                <p class="control">
+                  <button class="button is-danger is-fullwidth" type="submit">SAVE</button>
+                </p>
+              </div>
+
+             
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="column"></div>
+    </div>
+  </main>
+</div>
+

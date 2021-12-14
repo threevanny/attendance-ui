@@ -91,4 +91,14 @@ export class ApiService {
     return this.http.post<any>(`${this.API}/api/attendance/create`,
      { author: author, idAuthor: idAuthor, subject: subject, students: students, difficulties: difficulties })
   }
+
+  createProgramRequest(code: String, name: String, coordinator: any, duration: String) {
+    return this.http.post<any>(`${this.API}/api/program/create`,
+     { code: code, name: name, coordinator: coordinator, duration: duration })
+  }
+
+  createSubjectRequest(teacher: String, name: String, code: String, intensity: String, program: String) {
+    return this.http.post<any>(`${this.API}/api/subject/create`,
+      { teacher: teacher, name: name, code: code, intensity: intensity, program: program })
+  }
 }

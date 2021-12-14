@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../../services/api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-program',
@@ -7,9 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProgramComponent implements OnInit {
 
-  constructor() { }
+  program = {
+    code: '',
+    name: '',
+    coordinator: this.apiService.getName(),
+    duration: '',
+  };
+
+  constructor(
+    private apiService: ApiService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
   }
 
+  createProgramRequest() {
+    const {code, name, coordinator, duration} = this.program;
+    this.apiService.createProgramRequest(code, name, coordinator, duration)
+    .subscribe(res => {
+      console.log(res);
+      this.router.navigate(['/profile']);
+    })
+  }
 }
