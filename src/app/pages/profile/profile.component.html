@@ -114,7 +114,76 @@
 <!-- COORDINATOR -->
 
   <ng-container *ngIf="apiService.getRole() == 'coordinator'">
-    <p>Teacher</p>
+    <div class="columns">
+      <div class="column is-one-fifth">
+        <a class="button is-danger is-outlined is-fullwidth" routerLink="/program">
+          <span class="icon">
+            <i class="fas fa-plus"></i>
+          </span>
+          <span>Register Program</span>
+        </a>
+        <br>
+        <a class="button is-danger is-outlined is-fullwidth" routerLink="/subject">
+          <span class="icon">
+            <i class="fas fa-plus"></i>
+          </span>
+          <span>Register Subject</span>
+        </a>
+
+      </div>
+      <div class="column">
+        <p>Programs</p>
+        <table class="table is-striped">
+          <thead>
+            <tr>
+              <th><abbr title="Code">Code</abbr></th>
+              <th><abbr title="Name">Name</abbr></th>
+            </tr>
+          </thead>
+          <tfoot>
+            <tr>
+              <th><abbr title="Code">Code</abbr></th>
+              <th><abbr title="Name">Name</abbr></th>
+            </tr>
+          </tfoot>
+          <tbody>
+      
+            <!-- <tr *ngFor="let att of attendances">
+              <td>{{(att.date).substring(0, 10)}}</td>
+              <td>{{att.subject}}</td>
+              <td>{{att.students}}</td>
+              <td>{{att.difficulties}}</td>
+              <td><a class="icon"><i class="fas fa-cog"></i></a></td>
+            </tr> -->
+            
+          </tbody>
+        </table>
+      </div>
+      <div class="column">
+        <p>Subjects</p>
+        <table class="table is-striped">
+          <thead>
+            <tr>
+              <th><abbr title="Code">Code</abbr></th>
+              <th><abbr title="Name">Name</abbr></th>
+              <th><abbr title="Teacher">Teacher</abbr></th>
+            </tr>
+          </thead>
+          <tfoot>
+            <tr>
+              <th><abbr title="Code">Code</abbr></th>
+              <th><abbr title="Name">Name</abbr></th>
+              <th><abbr title="Teacher">Teacher</abbr></th>
+            </tr>
+          </tfoot>
+          <tbody>
+      
+          <!--  -->
+            
+          </tbody>
+        </table>
+      </div>
+    </div>
   </ng-container>
     
 </div>

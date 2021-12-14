@@ -13,6 +13,8 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 
 import { AuthGuard } from './auth.guard';
 import { AttendanceCreateComponent } from './pages/attendance-create/attendance-create.component';
+import { ProgramComponent } from './pages/program/program.component';
+import { SubjectComponent } from './pages/subject/subject.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { AttendanceCreateComponent } from './pages/attendance-create/attendance-
     LoginComponent,
     ProfileComponent,
     PageNotFoundComponent,
-    AttendanceCreateComponent
+    AttendanceCreateComponent,
+    ProgramComponent,
+    SubjectComponent
   ],
   imports: [
     BrowserModule,
