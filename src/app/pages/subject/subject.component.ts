@@ -14,6 +14,13 @@ interface Program {
   name: string;
 }
 
+interface Subject {
+  code: string
+  name: string
+  program: string
+  schedule: string
+}
+
 @Component({
   selector: 'app-subject',
   templateUrl: './subject.component.html',
@@ -23,13 +30,15 @@ export class SubjectComponent implements OnInit {
 
   teachers: Teacher[] = []
   programs: Program[] = []
+  subjects: Subject[] = []
 
   subject = {
     teacher: "",
     name: "",
     code: "",
     intensity: "",
-    program: ""
+    program: "",
+    schedule: "",
   };
 
   constructor(
@@ -49,15 +58,18 @@ export class SubjectComponent implements OnInit {
       this.programs = res;
       console.log(this.programs)
     })
+    this.http.get<Subject[]>(`${this.apiService.API}/api/subject/all`)
+    .subscribe(res => this.subjects = res)
   }
 
   createSubjectRequest() {
-    const {teacher, name, code, intensity, program} = this.subject;
+    const {teacher, name, code, intensity, program, schedule} = this.subject;
     console.log(this.subject)
-    this.apiService.createSubjectRequest(teacher, name, code, intensity, program)
+    this.apiService.createSubjectRequest(teacher, name, code, intensity, program, schedule)
     .subscribe(res => {
       console.log(res)
-      this.router.navigate(['/profile']);
+      this.router.navigate(['/subject']);
+      window.location.reload();
     })
   }
 }

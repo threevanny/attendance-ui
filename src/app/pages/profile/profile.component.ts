@@ -68,10 +68,10 @@ export class ProfileComponent implements OnInit {
     }
   // Teacher
     if (this.apiService.getRole() == 'teacher') {
-      this.http.get<Attendance[]>(`${this.apiService.API}/api/attendance/all`)
-      .subscribe(data => {
-        this.attendances = data
-      })
+      // this.http.get<Attendance[]>(`${this.apiService.API}/api/attendance/all`)
+      // .subscribe(data => this.attendances = data)
+      this.http.get<Attendance[]>(`${this.apiService.API}/api/attendance/author/${this.apiService.getId()}`)
+      .subscribe(data => this.attendances = data)
     }
   // Coordinator
     if (this.apiService.getRole() == 'coordinator') {

@@ -1,8 +1,15 @@
 <div class="container">
   <main class="content">
     <div class="columns">
-      <div class="column"></div>
-      <div class="column">
+      <div class="column is-one-third">
+        <span class="icon-text">
+          <span class="icon">
+            <i class="fas fa-arrow-left"></i>
+          </span>
+          <a routerLink="/profile">Back</a>
+        </span>
+        <br>
+        <br>
         <div class="card">
           <header class="card-header has-text-centered">
             <p class="card-header-title">Subject</p>
@@ -50,16 +57,53 @@
 
               <div class="field">
                 <p class="control">
-                  <button class="button is-danger is-fullwidth" type="submit">SAVE</button>
+                  <input class="input" type="text" [(ngModel)]="subject.schedule" name="schedule" placeholder="schedule" />
                 </p>
               </div>
 
-             
+              <div class="field">
+                <p class="control">
+                  <button class="button is-danger is-fullwidth" type="submit">SAVE</button>
+                </p>
+              </div>
             </form>
           </div>
         </div>
       </div>
-      <div class="column"></div>
+      <div class="column">
+        <h1>Programming</h1>
+        <table class="table is-striped">
+          <thead>
+            <tr>
+              <th><abbr title="Code">Code</abbr></th>
+              <th><abbr title="Name">Name</abbr></th>
+              <th><abbr title="Program">Program</abbr></th>
+              <th><abbr title="Schedule">Schedule</abbr></th>
+              <th><abbr title="Config">Config</abbr></th>
+            </tr>
+          </thead>
+          <tfoot>
+            <tr>
+              <th><abbr title="Code">Code</abbr></th>
+              <th><abbr title="Name">Name</abbr></th>
+              <th><abbr title="Program">Program</abbr></th>
+              <th><abbr title="Schedule">Schedule</abbr></th>
+              <th><abbr title="Config">Config</abbr></th>
+            </tr>
+          </tfoot>
+          <tbody>
+      
+            <tr *ngFor="let s of subjects">
+              <td>{{s.code}}</td>
+              <td>{{s.name}}</td>
+              <td>{{s.program}}</td>
+              <td>{{s.schedule}}</td>
+              <td><a class="icon"><i class="fas fa-cog"></i></a></td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
     </div>
   </main>
 </div>

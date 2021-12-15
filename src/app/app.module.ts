@@ -15,6 +15,7 @@ import { AuthGuard } from './auth.guard';
 import { AttendanceCreateComponent } from './pages/attendance-create/attendance-create.component';
 import { ProgramComponent } from './pages/program/program.component';
 import { SubjectComponent } from './pages/subject/subject.component';
+import { ProgrammingComponent } from './pages/programming/programming.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { SubjectComponent } from './pages/subject/subject.component';
     PageNotFoundComponent,
     AttendanceCreateComponent,
     ProgramComponent,
-    SubjectComponent
+    SubjectComponent,
+    ProgrammingComponent
   ],
   imports: [
     BrowserModule,

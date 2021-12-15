@@ -97,9 +97,9 @@ export class ApiService {
      { code: code, name: name, coordinator: coordinator, duration: duration })
   }
 
-  createSubjectRequest(teacher: String, name: String, code: String, intensity: String, program: String) {
+  createSubjectRequest(teacher: String, name: String, code: String, intensity: String, program: String, schedule: String) {
     return this.http.post<any>(`${this.API}/api/subject/create`,
-      { teacher: teacher, name: name, code: code, intensity: intensity, program: program })
+      { teacher: teacher, name: name, code: code, intensity: intensity, program: program, schedule: schedule })
   }
 
   getTeachers() {
