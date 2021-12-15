@@ -138,23 +138,23 @@
             <tr>
               <th><abbr title="Code">Code</abbr></th>
               <th><abbr title="Name">Name</abbr></th>
+              <th><abbr title="Config">Cofig</abbr></th>
             </tr>
           </thead>
           <tfoot>
             <tr>
               <th><abbr title="Code">Code</abbr></th>
               <th><abbr title="Name">Name</abbr></th>
+              <th><abbr title="Config">Cofig</abbr></th>
             </tr>
           </tfoot>
           <tbody>
       
-            <!-- <tr *ngFor="let att of attendances">
-              <td>{{(att.date).substring(0, 10)}}</td>
-              <td>{{att.subject}}</td>
-              <td>{{att.students}}</td>
-              <td>{{att.difficulties}}</td>
+            <tr *ngFor="let p of programs">
+              <td>{{p.code}}</td>
+              <td>{{p.name}}</td>
               <td><a class="icon"><i class="fas fa-cog"></i></a></td>
-            </tr> -->
+            </tr>
             
           </tbody>
         </table>
@@ -166,24 +166,31 @@
             <tr>
               <th><abbr title="Code">Code</abbr></th>
               <th><abbr title="Name">Name</abbr></th>
-              <th><abbr title="Teacher">Teacher</abbr></th>
+              <th><abbr title="Program">Program</abbr></th>
+              <th><abbr title="Config">Cofig</abbr></th>
             </tr>
           </thead>
           <tfoot>
             <tr>
               <th><abbr title="Code">Code</abbr></th>
               <th><abbr title="Name">Name</abbr></th>
-              <th><abbr title="Teacher">Teacher</abbr></th>
+              <th><abbr title="Program">Program</abbr></th>
+              <th><abbr title="Config">Cofig</abbr></th>
             </tr>
           </tfoot>
           <tbody>
       
-          <!--  -->
+            <tr *ngFor="let s of subjects">
+              <td>{{s.code}}</td>
+              <td>{{s.name}}</td>
+              <td>{{s.program}}</td>
+              <td><a class="icon"><i class="fas fa-cog"></i></a></td>
+            </tr>
             
           </tbody>
         </table>
       </div>
     </div>
   </ng-container>
-    
+
 </div>

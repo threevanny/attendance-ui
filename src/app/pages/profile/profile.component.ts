@@ -24,6 +24,17 @@ interface Attendance {
   subject: string
 }
 
+interface Subject {
+  code: string
+  name: string
+  program: string
+}
+
+interface Program {
+  code: string
+  name: string
+}
+
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -33,6 +44,8 @@ export class ProfileComponent implements OnInit {
 
   users: User[] = []
   attendances: Attendance[] = []
+  subjects: Subject[] = []
+  programs: Program[] = []
 
   constructor(
     public apiService: ApiService,
@@ -45,7 +58,7 @@ export class ProfileComponent implements OnInit {
      this.router.navigate(['/login']);
     }
 
-    // Getting data
+    // Admin
 
     if(this.apiService.getRole() == 'admin') {
       this.http.get<User[]>(`${this.apiService.API}/api/users`)
@@ -53,17 +66,19 @@ export class ProfileComponent implements OnInit {
         this.users = data
       })
     }
-  // 
+  // Teacher
     if (this.apiService.getRole() == 'teacher') {
       this.http.get<Attendance[]>(`${this.apiService.API}/api/attendance/all`)
       .subscribe(data => {
         this.attendances = data
       })
     }
-  // 
+  // Coordinator
     if (this.apiService.getRole() == 'coordinator') {
-      
+      this.http.get<Program[]>(`${this.apiService.API}/api/program/all`)
+      .subscribe(res => this.programs = res)
+      this.http.get<Subject[]>(`${this.apiService.API}/api/subject/all`)
+      .subscribe(res => this.subjects = res)
     }
-      
   }
 }

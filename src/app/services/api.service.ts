@@ -101,4 +101,12 @@ export class ApiService {
     return this.http.post<any>(`${this.API}/api/subject/create`,
       { teacher: teacher, name: name, code: code, intensity: intensity, program: program })
   }
+
+  getTeachers() {
+    return this.http.get<any>(`${this.API}/api/teachers`)
+  }
+
+  getPrograms() {
+    return this.http.get<any>(`${this.API}/api/program/all`)
+  }
 }

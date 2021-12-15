@@ -12,11 +12,9 @@
 
               <div class="field">
                 <div class="control">
-                  <div class="select is-fullwidth">
+                  <div class="select is-fullwidth" >
                     <select name="role" [(ngModel)]="subject.teacher">
-                      <option value="ddsad5d68as">Robert Plant</option>
-                      <option value="ddsad5d68as">Robert Plant</option>
-                      <option value="ddsad5d68as">Robert Plant</option>
+                      <option *ngFor="let th of teachers" value="{{th._id}}">{{th.firstname}} {{th.lastname}}</option>
                     </select>
                   </div>
                 </div>
@@ -44,9 +42,7 @@
                 <div class="control">
                   <div class="select is-fullwidth">
                     <select name="role" [(ngModel)]="subject.program">
-                      <option value="2711">Tec. Sistemas</option>
-                      <option value="2711">Tec. Sistemas</option>
-                      <option value="2711">Tec. Sistemas</option>
+                      <option *ngFor="let prg of programs" value="{{prg.code}}">{{prg.name}}</option>
                     </select>
                   </div>
                 </div>
