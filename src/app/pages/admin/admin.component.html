@@ -1,1 +1,34 @@
-<p>admin works!</p>
+<div class="container">
+  <div class="columns">
+    <div class="column">
+      <table class="table is-striped">
+        <thead>
+          <tr>
+            <th><abbr title="Name">Name</abbr></th>
+            <th><abbr title="Hour Value">Hour Value</abbr></th>
+            <th><abbr title="Weekly">Weekly</abbr></th>
+            <th><abbr title="Monthly">Monthly</abbr></th>
+          </tr>
+        </thead>
+        <tfoot>
+          <tr>
+            <th><abbr title="Name">Name</abbr></th>
+            <th><abbr title="Hour Value">Hour Value</abbr></th>
+            <th><abbr title="Weekly">Weekly</abbr></th>
+            <th><abbr title="Monthly">Monthly</abbr></th>
+          </tr>
+        </tfoot>
+        <tbody>
+    
+          <tr *ngFor="let user of teachers">
+            <td>{{user.firstname}} {{user.lastname}}</td>
+             <td>{{user.salary}}</td>
+            <td>$ {{user.salary * 8}}</td>
+            <td>$ {{user.salary * 32}}</td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

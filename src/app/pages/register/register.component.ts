@@ -14,7 +14,8 @@ export class RegisterComponent implements OnInit {
     lastname: "",
     email: "",
     password: "",
-    role: ""
+    role: "",
+    salary: ""
   };
 
   constructor(
@@ -26,8 +27,8 @@ export class RegisterComponent implements OnInit {
   }
 
   signup(){
-    const {firstname, lastname, email, password, role} = this.user;
-    this.apiService.registerRequest(firstname, lastname, email, password, role)
+    const {firstname, lastname, email, password, role, salary} = this.user;
+    this.apiService.registerRequest(firstname, lastname, email, password, role, salary)
     .subscribe( res => {
       if(res.success) {
         this.router.navigate(['/profile']);

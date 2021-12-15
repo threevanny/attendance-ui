@@ -20,7 +20,7 @@ export class ApiService {
     )
   }
 
-  registerRequest(firstname: String, lastname: String, email: String, password: String, role: String) {
+  registerRequest(firstname: String, lastname: String, email: String, password: String, role: String, salary: String) {
     return this.http.post<any>(`${this.API}/api/register`,
       { 
         firstname: firstname,
@@ -28,7 +28,8 @@ export class ApiService {
         email: email,
         password: password,
         password2: password,
-        role: role
+        role: role,
+        salary: salary
       }
     )
   }
